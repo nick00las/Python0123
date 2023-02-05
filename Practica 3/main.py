@@ -120,12 +120,8 @@ def pr_ejercicio7(p1):
     print("  Número de lote:", p1.batch_number())
 
 
-def gen_object_ejercicio7(name, code):
-    return Producto(name, code)
-
-
 def ejercicio7(name, code):
-    p1 = gen_object_ejercicio7(name, code)
+    p1 = Producto(name, code)
     print(" ", p1)
     pr_ejercicio7(p1)
 
