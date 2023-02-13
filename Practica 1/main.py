@@ -21,19 +21,35 @@ print("area del triangulo equilatero", radio*radio/4*math.sqrt(3))
 
 ##ROJAS GALA NICOLAS ALONSO EJERCICIO 3 SEMANA 1 
 print("pregunta 3")
-val1=int(input("Ingrese el valor 1: "))
-val2=int(input("Ingrese el valor 2: "))
-val3=int(input("Ingrese el valor 3: "))
+val1=float(input("Ingrese el valor 1: "))
+val2=float(input("Ingrese el valor 2: "))
+val3=float(input("Ingrese el valor 3: "))
 
-print("la suma del valor 1 y el val 2 es: ", val1+val2)
-print("la resta del valor 1 y el val 3 es: ", val1-val3)
-print("la multiplicación del valor 2 y el val 2 es: ", val2*val3)
-print("la suma del valor 3 y el val 2 es: ", val3/val2)
+print("la suma de los 3 valores es ", val1+val2+val3)
+print("la resta de los 3 valores es ", val3-val2-val1)
+print("la multiplicación de los 3 valores es ", val1*val2*val3)
+print("la division de los valores es: ", val1/val2/val3)
+print("la division entera de los valores es: ", val1//val2//val3)
 
 print("pregunta 4")
-dato=input("Ingrese una palabra: ")
+dato=input("Ingrese un valor(sin importar tipo de dato): ")
 
-print("el tipo de dato de 'dato' es: ", type(dato))
+if isinstance(dato, int):
+    data_type = "<class 'int'>"
+elif isinstance(dato, str):
+    data_type = "<class 'str'>"
+elif isinstance(dato, list):
+    data_type = "<class 'list'>"
+elif isinstance(dato, float):
+    data_type = "<class 'float'>"
+elif isinstance(dato, dict):
+    data_type = "<class 'dict'>"
+elif isinstance(dato, tuple):
+    data_type = "<class 'tuple'>"
+else:
+    data_type = "Tipo de dato desconocido"
+
+print(data_type)
 
 ##ROJAS GALA NICOLAS ALONSO EJERCICIO 5 SEMANA 1 
 print("pregunta 5")
@@ -70,7 +86,7 @@ print("pregunta 8")
 clave="contraseña"
 clave_ingresada=input("ingrese la contraseña: ")
 
-if(clave_ingresada==clave):
+if(clave_ingresada.lower()==clave):
     print("las claves coinciden")
 else:
     print("las claves NO coinciden")
