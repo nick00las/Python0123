@@ -51,25 +51,4 @@ table=""" CREATE TABLE DOLAR (
         ); """
 cursor_obj.execute(table)
 
-# comentamos las insercciones ya que solo sera parte de la creacion de tablas
-""" insert =" INSERT INTO USUARIOS(USUARIO,PASSWORD,EMAIL,FULLNAME,SCORE,TIPOUSUARIO) VALUES('admin','admin','admin@datux.com','admin datux',0,'admin')"
-
-conn.execute(insert)
-insert =" INSERT INTO USUARIOS(USUARIO,PASSWORD,EMAIL,FULLNAME,SCORE,TIPOUSUARIO) VALUES('cliente','cliente','email','cliente',0,'cliente')"
-conn.execute(insert)
-
-
-print("Table is Ready")
-
-print("ingrese valores")
-nameProduct=input('ingrese el nombre del producto')
-price=input('ingrese el PRICE:')
-categria=input('ingrese el CATEGORIA:')
-stock=int(input('ingrese el STCOKACTUAL:'))
-
-insert="INSERT INTO PRODUCTOS(NAMEPRODUCT,PRICE,CATEGORIA,STCOKACTUAL) VALUES(?,?,?,?);"
-data=(nameProduct,price,categria,stock)
-conn.execute(insert,data)
-"""
-
 conn.commit()

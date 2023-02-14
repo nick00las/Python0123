@@ -20,18 +20,6 @@ def insertDataAuto():
     insert=f"INSERT INTO DOLAR(DOLAR_SOLES) VALUES('{dolar_compra}')"
     conn.execute(insert)
     conn.commit()
-    
-    """#obtiene la ruta absoluta
-     #print(os.getcwd())
-    path_=os.getcwd()+'\dataTienda.csv'
-    '''#conection a bd
-    conn=db.Conection('tienda.db')
-    cursor=conn.getCursor()'''
-    print(path_)
-    df = pd. read_csv (path_, sep = ";") 
-    ### logica para insertar 
-    for i,fila in df.iterrows():
-        print(fila['ORDER_ID'])"""
 
 def updateDolar(valor_dolar,valor_id):
     conn=sqlite3.connect('tienda.db')
@@ -39,12 +27,6 @@ def updateDolar(valor_dolar,valor_id):
     conn.execute(update)
     conn.commit()
 
-'''
-message="""
-    1)Insertar data:
-    2)Actualizar data del dolar
-"""
-'''
 def graf_historico():
     conn=sqlite3.connect('tienda.db')
     cursor = conn.cursor()
