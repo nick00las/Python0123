@@ -46,6 +46,25 @@ message="""
 """
 '''
 def graf_historico():
+    conn=sqlite3.connect('tienda.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT FECHA,DOLAR_SOLES FROM DOLAR")
+    datos = cursor.fetchall()
+    fecha = [fila[0] for fila in datos]
+    dolar_soles = [fila[1] for fila in datos]
+    # Crear el gráfico de barras
+    plt.bar(fecha, dolar_soles)
+
+    # Personalizar el gráfico si es necesario
+    plt.title("Evolución Historica del precio del dolar")
+    plt.xlabel("Etiqueta del eje X")
+    plt.ylabel("Dolar en soles")
+
+    # Mostrar el gráfico
+    plt.show()
+
+    # Cerrar la conexión con la base de datos
+    conn.close()
     pass
 
 while True:
@@ -84,7 +103,7 @@ while True:
         else:
             print("se actualizo correctamente")
     elif opcion == "4":
-        pass
+        graf_historico()
     else:
         exit()
 
